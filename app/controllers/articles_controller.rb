@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = ARticle.new(article: "...", body: "...")
+    @article = Article.new(article_params)
 
     if @article.save
       #redirect_to will cause the broser to maje a new request
@@ -22,4 +22,9 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
+
+  private 
+    def article_params
+      params.require(:article).permit(:title, :body)
+    end 
 end
