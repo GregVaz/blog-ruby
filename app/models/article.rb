@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  has_may :comments
+  has_many :comments
   
   #this means that the title value must contain at least one non-whitespace character
   validates :title, presence: true
