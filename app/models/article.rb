@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  has_may :comments
+  
   #this means that the title value must contain at least one non-whitespace character
   validates :title, presence: true
   #it declares that the body value must be at least 10 characters long
