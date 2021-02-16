@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  include Visible
   has_many :comments
   
   #this means that the title value must contain at least one non-whitespace character
