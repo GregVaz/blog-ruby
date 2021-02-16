@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   include Visible
-  has_many :comments
+  has_many :comments, dependent: :destroy
   
   #this means that the title value must contain at least one non-whitespace character
   validates :title, presence: true
